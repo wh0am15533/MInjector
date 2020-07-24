@@ -1,0 +1,3 @@
+﻿  AssemblyInfo.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+     Creating library C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\build\x64\Debug\MInject.lib and object C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\build\x64\Debug\MInject.exp
+  MInject.vcxproj -> C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\build\x64\Debug\MInject.dll

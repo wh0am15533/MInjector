@@ -1,0 +1,10 @@
+﻿  AssemblyInfo.cpp
+  MonoProcessWrapper.cpp
+  Generating Code...
+  MonoProcess.cpp
+  .NETFramework,Version=v4.5.AssemblyAttributes.cpp
+  BlackBone.lib(x86operand_regs.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+     Creating library C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\build\Win32\Release\MInject.lib and object C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\build\Win32\Release\MInject.exp
+  Generating code
+  Finished generating code
+  MInject.vcxproj -> C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\build\Win32\Release\MInject.dll

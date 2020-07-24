@@ -1,0 +1,13 @@
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\bin\Debug\MInjector.exe.config
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\bin\Debug\MInjector.exe
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\bin\Debug\MInjector.pdb
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\bin\Debug\MInject.dll
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\bin\Debug\MInject.pdb
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\obj\Debug\MInjector.Main.resources
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\obj\Debug\MInjector.Properties.Resources.resources
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\obj\Debug\MInjector.csproj.GenerateResource.cache
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\obj\Debug\MInjector.csproj.CoreCompileInputs.cache
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\obj\Debug\MInjector.csproj.CopyComplete
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\obj\Debug\MInjector.exe
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\obj\Debug\MInjector.pdb
+C:\Users\James\Documents\Visual Studio 2017\Projects\MInjector\MInjector\obj\Debug\MInjector.csprojAssemblyReference.cache
