@@ -1,5 +1,6 @@
 #include "MonoProcess.h"
 #include "MonoDeclarations.h"
+
 #include "../BlackBone/src/BlackBone/Process/RPC/RemoteFunction.hpp"
 
 namespace MInjectNative
@@ -16,8 +17,10 @@ namespace MInjectNative
 	MonoProcess::MonoProcess(DWORD p_ProcessId)
 	{
 		m_InnerProcess.Attach(p_ProcessId);
+		
+		// ORIG
 		m_MonoModule = m_InnerProcess.modules().GetModule(L"mono.dll");
-
+		
 		if (m_MonoModule == nullptr) { m_MonoModule = m_InnerProcess.modules().GetModule(L"mono-2.0-bdwgc.dll"); } // Added J.E.
 
 		m_InnerProcess.remote().CreateRPCEnvironment(blackbone::Worker_CreateNew);

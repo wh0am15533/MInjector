@@ -24,7 +24,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>MInjectr</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
     <ProjectName>MInject</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -163,7 +163,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlackBone\src\BlackBone\BlackBone.vcxproj">
+    <ProjectReference Include="..\Blackbone\src\BlackBone\BlackBone.vcxproj">
       <Project>{a2c53563-46f5-4d87-903f-3f1f2fdb2deb}</Project>
     </ProjectReference>
   </ItemGroup>

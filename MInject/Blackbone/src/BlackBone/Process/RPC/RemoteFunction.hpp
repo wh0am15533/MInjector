@@ -3,8 +3,7 @@
 #include "../../Asm/IAsmHelper.h"
 #include "../Process.h"
 
-// TODO: Find more elegant way to deduce calling convention
-//       than defining each one manually
+// TODO: Find more elegant way to deduce calling convention than defining each one manually
 
 namespace blackbone
 {
