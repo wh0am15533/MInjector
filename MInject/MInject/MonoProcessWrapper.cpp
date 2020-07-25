@@ -83,7 +83,7 @@ bool MInject::MonoProcess::Attach(Process^ p_Process, [OutAttribute] MonoProcess
 {
 	for each(ProcessModule^ mod in p_Process->Modules)
 	{
-		if (mod->FileName->Contains("mono.dll"))
+		if (mod->FileName->Contains("mono.dll") || mod->FileName->Contains("mono-2.0-bdwgc.dll"))
 		{
 			p_MonoProcess = gcnew MonoProcess(p_Process->Id);
 			return true;
