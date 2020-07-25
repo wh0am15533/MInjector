@@ -9,10 +9,6 @@ Mono Framework Interaction / Injection Library for .NET (C++/CLI)
 - Allow easy injection into Mono namespace
 - Provides experimental safety mechanisms to hide the injected assembly from `AssemblyLoad` callbacks and `GetAssemblies()`
 
-## Download
-You don't have time to waste with coding ? No problem !  
-Just grab the pre-compiled injector (based on this library) here: https://github.com/wh0am15533MInjector
-
 ## Usage
 Add `MInject.dll` to your .NET project references.
 Don't forget `using MInject;`
