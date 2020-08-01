@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-
+using Microsoft.Win32;
 
 namespace MInjector
 {
@@ -22,6 +22,9 @@ namespace MInjector
             [Out] out ushort nativeMachine
         );
 
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool IsWow64Process(IntPtr hProcess, out bool wow64Process);
+
         #endregion
 
         public Main()
@@ -29,7 +32,7 @@ namespace MInjector
             InitializeComponent();
 
             RefreshMonoProcesses();
-            Text += !Environment.Is64BitProcess ? " (x86)" : " (x64)";
+            Text += !Environment.Is64BitProcess ? " OS: (x86)" : " OS: (x64)";
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
@@ -67,34 +70,61 @@ namespace MInjector
                     else { /* Possibly found Unity/Mono process */ }
 
 
-                    // NOTES: If built with AnyCPU you'll only get the Managed modules, no Native modules.
-                    // If built x32/x64 you'll get all the modules back that are the same architecture.
-                    //ProcessModuleCollection mods = process.Modules;
-                    // Is x32 or x64 Using my Undocumented Response Discovery! J.E
-                    if (process.Modules != null)
+                    string OSVer = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion", "ProductName", null);
+
+                    if (OSVer.Contains("Windows 10"))
                     {
-                        ushort pMachine = 0;
-                        ushort nMachine = 0;
-
-                        if (!IsWow64Process2(process.Handle, out pMachine, out nMachine))
+                        #region[Win10]
+                        // NOTES: If built with AnyCPU you'll only get the Managed modules, no Native modules. If built x32/x64 you'll get all the modules back that are the same architecture.
+                        //ProcessModuleCollection mods = process.Modules; Is x32 or x64 Using my Undocumented Response Discovery! J.E
+                        if (process.Modules != null)
                         {
-                            //handle error
+                            try
+                            {
+                                ushort pMachine = 0;
+                                ushort nMachine = 0;
+
+                                if (!IsWow64Process2(process.Handle, out pMachine, out nMachine))
+                                {
+                                    //handle error
+                                }
+
+                                if (pMachine == 332) // WinAPI Undocumented Result code. It's ALWAY'S 332 for 32bit Processes! Otherwise it ALWAY'S returns 0! 
+                                {
+                                    isTargetx64 = false;
+                                    processList.Items.Add(new PrintableProcess(process));
+                                    processList.Refresh();
+                                }
+                                else
+                                {
+                                    isTargetx64 = true;
+                                    processList.Items.Add(new PrintableProcess(process));
+                                    processList.Refresh();
+                                }
+                            }
+                            catch { }
                         }
+                        #endregion
+                    }
+                    else
+                    {
+                        #region[Win7]
 
-                        if (pMachine == 332) // WinAPI Undocumented Result code. It's ALWAY'S 332 for 32bit Processes! Otherwise it ALWAY'S returns 0! 
+                        IsWow64Process(process.Handle, out bool isTargetWOWx64);
+
+                        if (isTargetWOWx64)
                         {
-                            isTargetx64 = false;
-                            processList.Items.Add(new PrintableProcess(process));
-                            processList.Refresh();
+                            isTargetx64 = false; // It is WOW64 so it's a 32-bit process
                         }
                         else
                         {
-                            isTargetx64 = true;
-                            processList.Items.Add(new PrintableProcess(process));
-                            processList.Refresh();
+                            isTargetx64 = true; // It's not a WOW64 process so 64-bit process, and we already check if OS is 32 or 64 bit.
                         }
+
+                        #endregion
                     }
 
+                    #region[Original Code]
                     /* Orig
                     foreach (ProcessModule module in process.Modules)
                     {
@@ -105,6 +135,7 @@ namespace MInjector
                         }
                     }
                     */
+                    #endregion
                 }
                 catch { }
             }
