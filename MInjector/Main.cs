@@ -32,7 +32,7 @@ namespace MInjector
             InitializeComponent();
 
             RefreshMonoProcesses();
-            Text += !Environment.Is64BitProcess ? " OS: (x86)" : " OS: (x64)";
+            Text += !Environment.Is64BitProcess ? " (x86)" : " (x64)";
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
@@ -69,8 +69,8 @@ namespace MInjector
                     }
                     else { /* Possibly found Unity/Mono process */ }
 
-
                     string OSVer = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion", "ProductName", null);
+                    //MessageBox.Show(OSVer);
 
                     if (OSVer.Contains("Windows 10"))
                     {
@@ -110,17 +110,21 @@ namespace MInjector
                     {
                         #region[Win7]
 
-                        IsWow64Process(process.Handle, out bool isTargetWOWx64);
+                        IsWow64Process(process.Handle, out bool isTargetWOWx64);                        
 
                         if (isTargetWOWx64)
                         {
                             isTargetx64 = false; // It is WOW64 so it's a 32-bit process
+                            processList.Items.Add(new PrintableProcess(process));
+                            processList.Refresh();
                         }
                         else
                         {
                             isTargetx64 = true; // It's not a WOW64 process so 64-bit process, and we already check if OS is 32 or 64 bit.
+                            processList.Items.Add(new PrintableProcess(process));
+                            processList.Refresh();
                         }
-
+                        
                         #endregion
                     }
 
