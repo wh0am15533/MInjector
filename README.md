@@ -9,7 +9,7 @@ Mono Framework Injector (C#) using MInject Library orignally by EquiFox modded t
 - Remove any traces of injection (Experimental)
 
 ## Download
-You can find the most recent releases here: https://github.com/wh0am15533/MInjector/releases
+You can find the most recent binary releases here: https://www.unknowncheats.me/forum/downloads.php?do=file&id=30457
 
 ## Compile Yourself
 - Requires Visual Studio 2017 (Toolset v141)
