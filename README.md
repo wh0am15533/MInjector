@@ -1,7 +1,7 @@
 # MInjector wh0am1 Mod.
 Mono Framework Injector (C#) using MInject Library orignally by EquiFox modded to support MonoBleedingEdge and fixes the notorious process bug when trying to find the game process. Great Injector now fixed, but it relies on CreateRemoteThread as injection technique. Old noisy method nowadays.
 
-![Alt text](https://i.imgur.com/sPwtb3s.png "MInjector")
+![Alt text](https://i.imgur.com/kcuv7Ei.png "MInjector")
 
 ## Features
 - Auto-detect injectable Mono processes
