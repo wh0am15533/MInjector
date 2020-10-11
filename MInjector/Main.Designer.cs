@@ -45,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.aboutLbl = new System.Windows.Forms.Label();
             this.injectBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.status = new System.Windows.Forms.Label();
             this.targetGroupBox.SuspendLayout();
             this.settingsGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +56,7 @@
             this.targetGroupBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.targetGroupBox.Controls.Add(this.refreshBtn);
             this.targetGroupBox.Controls.Add(this.processList);
+            this.targetGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.targetGroupBox.ForeColor = System.Drawing.Color.Teal;
             this.targetGroupBox.Location = new System.Drawing.Point(11, 15);
             this.targetGroupBox.Name = "targetGroupBox";
@@ -75,7 +78,9 @@
             // 
             // processList
             // 
-            this.processList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.processList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.processList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.processList.ForeColor = System.Drawing.Color.DarkCyan;
             this.processList.FormattingEnabled = true;
             this.processList.Location = new System.Drawing.Point(29, 32);
             this.processList.Name = "processList";
@@ -95,8 +100,8 @@
             this.settingsGroupBox.Controls.Add(this.label3);
             this.settingsGroupBox.Controls.Add(this.label2);
             this.settingsGroupBox.Controls.Add(this.label1);
-            this.settingsGroupBox.Enabled = false;
             this.settingsGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsGroupBox.ForeColor = System.Drawing.Color.Teal;
             this.settingsGroupBox.Location = new System.Drawing.Point(11, 98);
             this.settingsGroupBox.Name = "settingsGroupBox";
@@ -129,7 +134,9 @@
             // 
             // asmPathTextBox
             // 
+            this.asmPathTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.asmPathTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.asmPathTextBox.ForeColor = System.Drawing.Color.Teal;
             this.asmPathTextBox.Location = new System.Drawing.Point(118, 25);
             this.asmPathTextBox.Name = "asmPathTextBox";
             this.asmPathTextBox.ReadOnly = true;
@@ -148,7 +155,9 @@
             // 
             // methodTxtBox
             // 
+            this.methodTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.methodTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.methodTxtBox.ForeColor = System.Drawing.Color.Teal;
             this.methodTxtBox.Location = new System.Drawing.Point(118, 113);
             this.methodTxtBox.Name = "methodTxtBox";
             this.methodTxtBox.Size = new System.Drawing.Size(171, 20);
@@ -156,7 +165,9 @@
             // 
             // classTxtBox
             // 
+            this.classTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.classTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.classTxtBox.ForeColor = System.Drawing.Color.Teal;
             this.classTxtBox.Location = new System.Drawing.Point(118, 85);
             this.classTxtBox.Name = "classTxtBox";
             this.classTxtBox.Size = new System.Drawing.Size(171, 20);
@@ -164,7 +175,9 @@
             // 
             // namespaceTxtBox
             // 
+            this.namespaceTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.namespaceTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.namespaceTxtBox.ForeColor = System.Drawing.Color.Teal;
             this.namespaceTxtBox.Location = new System.Drawing.Point(118, 57);
             this.namespaceTxtBox.Name = "namespaceTxtBox";
             this.namespaceTxtBox.Size = new System.Drawing.Size(171, 20);
@@ -227,12 +240,34 @@
             this.injectBtn.UseVisualStyleBackColor = true;
             this.injectBtn.Click += new System.EventHandler(this.injectBtn_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Magenta;
+            this.label5.Location = new System.Drawing.Point(13, 331);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Status:";
+            // 
+            // status
+            // 
+            this.status.AutoSize = true;
+            this.status.ForeColor = System.Drawing.Color.Orchid;
+            this.status.Location = new System.Drawing.Point(55, 331);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(0, 13);
+            this.status.TabIndex = 12;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(341, 332);
+            this.ClientSize = new System.Drawing.Size(341, 356);
+            this.Controls.Add(this.status);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.injectBtn);
             this.Controls.Add(this.aboutLbl);
             this.Controls.Add(this.settingsGroupBox);
@@ -243,7 +278,7 @@
             this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MInjector -wh0am1 Mod";
+            this.Text = "MInjector -wh0am1 Mod v1.4";
             this.targetGroupBox.ResumeLayout(false);
             this.settingsGroupBox.ResumeLayout(false);
             this.settingsGroupBox.PerformLayout();
@@ -270,6 +305,8 @@
         private System.Windows.Forms.CheckBox hideAssemblyLoadCheck;
         private System.Windows.Forms.Label aboutLbl;
         private System.Windows.Forms.Button injectBtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label status;
     }
 }
 
